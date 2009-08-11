@@ -35,4 +35,4 @@ set1.aintersection(set2) -> [1, [3, 4], 9]
 
 For large collections, sets are much faster than using things like Array.contains or interating through the array as long as you are willing to pay the cost of initializing the Set. For large collections which are searched or compared frequently Sets are particularly useful.
 
-$hash is also handy. You can now sanely check if any two JavaScript Objects are equal.
+$hash is also handy. You can now sanely check if any two JavaScript Objects are equal. Note this isn't useful or desirable for MooTools class instances. The standard JavaScript Object equality check is the desired behavior.
