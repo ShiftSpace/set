@@ -61,8 +61,8 @@ function init()
   console.log("set0:");
   console.log(set0.toArray());
   
-  var set1 = new Set([1, 2, [3, 4]]);
-  var set2 = new Set([1, [3, 4], 5]);
+  var set1 = new Set([1, 2, 9, [3, 4]]);
+  var set2 = new Set([1, [3, 4], 5, 9]);
   console.log("set1 set2 intersection:");
   console.log(set1.aintersection(set2));
   
