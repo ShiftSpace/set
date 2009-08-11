@@ -11,7 +11,7 @@ JavaScript has no sane notion of equality when comparing Arrays or Objects. This
 
 One easy workaround is to JSON.encode the arrays before comparing them. This works reasonably well as long as you don't have Objects in your array.
 
-This Set implementation can deal with Objects. It converts Objects into an array of array, one for each key value pair. It does so recursively. In order to allow for comparison, these arrays are sorted by the original key.
+This Set implementation can deal with Objects. It converts Objects into an array of arrays, one for each key value pair. It does so recursively. In order to allow for comparison, these arrays are sorted by the original key.
 
 <pre>
 {first:"Bob", last:"Smith"} -> [['first', 'Bob'], ['last', 'Smith']]
