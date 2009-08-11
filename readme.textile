@@ -25,7 +25,7 @@ $hash({first:"Bob", last:"Smith"}) == $hash({last:"Smith", first:"Bob"})
 
 h3. Features
 
-Set supports intersection, union, and difference. These return new Set instances. If you want array you can use aintersection, aunion, adifference.
+Set supports intersection, union, and difference. These return new Set instances. If you want the result as an JavaScript Array you can use aintersection, aunion, adifference.
 
 <pre>
 var set1 = new Set([1, 2, [3, 4], 9]);
@@ -33,6 +33,6 @@ var set2 = new Set([1, [3, 4], 9, 5]);
 set1.aintersection(set2) -> [1, [3, 4], 9]
 </pre>
 
-For large collections, sets are much faster than using Array.contains as long as you are willing to pay the cost of initializing the Set. For collections which are searched or compared frequently Sets are particularly useful.
+For large collections, sets are much faster than using things like Array.contains or interating through the array as long as you are willing to pay the cost of initializing the Set. For large collections which are searched or compared frequently Sets are particularly useful.
 
-$hash is also handy. You can now sanely check if two Objects are equal.
+$hash is also handy. You can now sanely check if any two JavaScript Objects are equal.
