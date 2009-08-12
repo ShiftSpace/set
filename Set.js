@@ -3,16 +3,17 @@
 var $encoder;
 if(Browser.Engine.gecko && Browser.Engine.version >= 19)
 {
-  $encoder = "native";
+  // remove MooTools JSON
   delete Hash.prototype.toJSON;
   delete Array.prototype.toJSON;
   delete String.prototype.toJSON;
   delete Number.prototype.toJSON;
   delete window.JSON;
+  $encoder = JSON.stringify;
 }
 else
 {
-  $encoder = "mootools";
+  $encoder = JSON.encode;
 }
   
 function $normalize(v) {
@@ -33,7 +34,7 @@ function $normalize(v) {
 }
 
 window.$hash = function(v) {
-  return ($encoder == 'native') ? JSON.stringify($normalize(v)) : JSON.encode($normalize(v));
+  return $encoder($normalize(v));
 };
 
 Array.implement({
