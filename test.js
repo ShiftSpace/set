@@ -7,7 +7,7 @@ function createArray(n)
   {
     result.push("bar");
   }
-  result[n/2] = "foo";
+  result[n-1] = "foo";
   return result;
 }
 
@@ -18,6 +18,7 @@ function createSet(n)
   {
     result.push("bar");
   }
+  result[n-1] = "foo";
   return new Set(result);
 }
 
