@@ -6,7 +6,8 @@
 (function() {
   
 var $encoder;
-if(Browser.Engine.gecko && Browser.Engine.version >= 19) {
+if((Browser.Engine.gecko && Browser.Engine.version) >= 19 ||
+   (Browser.Engine.webkit && Browser.Engine.version >= 525)) {
   // remove MooTools JSON
   delete Hash.prototype.toJSON;
   delete Array.prototype.toJSON;
