@@ -1,8 +1,7 @@
 (function() {
   
 var $encoder;
-if(Browser.Engine.gecko && Browser.Engine.version >= 19)
-{
+if(Browser.Engine.gecko && Browser.Engine.version >= 19) {
   // remove MooTools JSON
   delete Hash.prototype.toJSON;
   delete Array.prototype.toJSON;
@@ -10,9 +9,7 @@ if(Browser.Engine.gecko && Browser.Engine.version >= 19)
   delete Number.prototype.toJSON;
   delete window.JSON;
   $encoder = JSON.stringify;
-}
-else
-{
+} else {
   $encoder = JSON.encode;
 }
   
