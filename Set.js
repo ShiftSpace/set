@@ -1,3 +1,8 @@
+// ==Builder==
+// @required
+// @package           Set
+// ==/Builder==
+
 (function() {
   
 var $encoder;
