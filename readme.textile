@@ -23,7 +23,7 @@ Then we can JSON encode this array to do equality checks. You can see this for y
 $hash({first:"Bob", last:"Smith"}) == $hash({last:"Smith", first:"Bob"})
 </pre>
 
-h3. Features
+h2. Features
 
 Set supports intersection, union, and difference. These return new Set instances. If you want the result as an JavaScript Array you can use aintersection, aunion, adifference.
 
