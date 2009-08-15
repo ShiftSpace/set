@@ -14,9 +14,11 @@ if((Browser.Engine.gecko && Browser.Engine.version) >= 19 ||
   delete String.prototype.toJSON;
   delete Number.prototype.toJSON;
   delete window.JSON;
-  $encoder = JSON.stringify;
+  $encoder = JSON.encode = JSON.stringify;
+  $decoder = JSON.decode = JSON.parse;
 } else {
   $encoder = JSON.encode;
+  $decoder = JSON.decoder;
 }
   
 function $normalize(v) {
