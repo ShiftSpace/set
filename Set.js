@@ -119,6 +119,29 @@ window.Set = new Class({
     set = new Set(set);
     for(var k in this.rep) if(!set.rep[k]) return false;
     return true;
+  },
+
+  each: function(fn, bind) {
+    for(var k in this.rep) fn.call(bind, this.rep[k], this);
+  },
+
+  map: function (fn, bind) {
+    var result = new Set();
+    for(var k in this.rep) {
+      var v = fn.call(bind, this.rep[k], this);
+      result.rep[$hash(v)] = v;
+    }
+    return result;
+  },
+
+  filter: function(fn, bind) {
+    var result = new Set();
+    for(var k in this.rep) {
+      var v = this.rep[k];
+      var bool = fn.call(bind, v, this);
+      if(bool) result.rep[k] = v;
+    }
+    return result;
   }
 });
 
