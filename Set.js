@@ -1,16 +1,19 @@
 (function() {
   
 var $encoder;
-if(Browser.Engine.gecko && Browser.Engine.version >= 19) {
+if((Browser.Engine.gecko && Browser.Engine.version) >= 19 ||
+   (Browser.Engine.webkit && Browser.Engine.version >= 525)) {
   // remove MooTools JSON
   delete Hash.prototype.toJSON;
   delete Array.prototype.toJSON;
   delete String.prototype.toJSON;
   delete Number.prototype.toJSON;
   delete window.JSON;
-  $encoder = JSON.stringify;
+  $encoder = JSON.encode = JSON.stringify;
+  $decoder = JSON.decode = JSON.parse;
 } else {
   $encoder = JSON.encode;
+  $decoder = JSON.decoder;
 }
   
 function $normalize(v) {
