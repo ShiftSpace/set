@@ -6,6 +6,8 @@
 (function() {
   
 var $encoder;
+// the following is commented out until the Native JSON parse in FireFox becomes more lax - David 8/19/09
+/*
 if((Browser.Engine.gecko && Browser.Engine.version) >= 19 ||
    (Browser.Engine.webkit && Browser.Engine.version >= 525)) {
   // remove MooTools JSON
@@ -14,10 +16,12 @@ if((Browser.Engine.gecko && Browser.Engine.version) >= 19 ||
   delete String.prototype.toJSON;
   delete Number.prototype.toJSON;
   delete window.JSON;
-  $encoder = JSON.stringify;
-} else {
+  $encoder = JSON.encode = JSON.stringify;
+  $decoder = JSON.decode = JSON.parse;
+} else {*/
   $encoder = JSON.encode;
-}
+  $decoder = JSON.decoder;
+//}
   
 function $normalize(v) {
   if($type(v) == "array") return v.normalize();
