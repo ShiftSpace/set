@@ -1,8 +1,3 @@
-// ==Builder==
-// @required
-// @package           Utils
-// ==/Builder==
-
 (function() {
   
 var $encoder;
